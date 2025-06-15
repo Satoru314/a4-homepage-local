@@ -46,6 +46,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-16">
           {activities.map((activity) => (
             <ImageBox
+              key={activity.id}
               path={activity.path}
               alt={activity.alt}
 
