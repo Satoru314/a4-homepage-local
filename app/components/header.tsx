@@ -38,7 +38,7 @@ export default function Header() {
             >
                 <ul className="flex space-x-4">
                     <li><a href="/home" >ホーム</a></li>
-                    <li><a href="/product" >プロダクト紹介</a></li>
+                    <li><a href="/product" >サービス紹介</a></li>
                     <li><a href="/organization" >団体紹介</a></li>
                     <li><a href="/contact" >お問い合わせ</a></li>
                 </ul>

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import ImageBox from "../components/imageBox";
-import SimpleHeading from "../components/simpleHeading";
+import ImageBox from "../components/image_box";
+import SimpleHeading from "../components/simple_heading";
 
 const activities = [
   {
@@ -61,20 +61,21 @@ export default function Home() {
         <div >
           <div className="mt-16 w-full h-96 flex">
 
-            <div className="flex-1 h-full">
+            <div className="w-full md:w-1/2 h-64 md:h-auto"> {/* 親の高さは h-64 (モバイル) */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.456789123456!2d135.67890123!3d34.56789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000abcdef123456%3A0xabcdef123456789!2sKobe%20University%20Headquarters%20for%20Academic%20and%20Industrial%20Innovation!5e0!3m2!1sen!2sjp!4v1234567890123!5m2!1sen!2sjp"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d204.94774605679828!2d135.2340499!3d34.7262619!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008c1099500001%3A0x98e427ff38944988!2z5a2m6KGT44O755Sj5qWt44Kk44OO44OZ44O844K344On44Oz5Ym16YCg5pys6YOo!5e0!3m2!1sen!2sjp!4v1749961311795!5m2!1sen!2sjp"
+                width="100%"   // 親要素に合わせる
+                height="100%"  // 親要素に合わせる (この場合は h-64 が適用される)
+                style={{ border: 0 }} // JSXのstyleオブジェクト形式
+                allowFullScreen  // キャメルケース
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade" // キャメルケース
+                title="Google Map of the location" // title属性を追加することを推奨
               ></iframe>
             </div>
             <div className="flex-1 h-full p-4 bg-gray-100">
               <h2 className="text-xl font-semibold mb-4">アクセス情報</h2>
-              <p className="text-gray-700">全体ミーティングをダイセルOIホール、作業会を学生会館・グループ学習室で行っています。</p>
+              <p className="text-gray-700">全体ミーティングは学術・産業イノベーション創造本部のダイセルOIホールを借りて行っています。</p>
             </div>
           </div>
         </div>
