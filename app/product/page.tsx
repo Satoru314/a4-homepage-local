@@ -13,7 +13,7 @@ export default function ProductPage() { // コンポーネント名を ProductPa
             productName: "えー授業",
             productLink: "https://shindaihub-class-front-deployment2.vercel.app/classes",
             productImage: "/スクリーンショット 2025-06-16 093245.png",
-            productDescription: "神戸大学の授業のレビューが探せるアプリ。",
+            productDescription: "神戸大学の授業レビューが見れるアプリ。",
         },
         {
             productName: "神大マップ",
