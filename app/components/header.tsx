@@ -29,7 +29,8 @@ export default function Header() {
         >
             <h1
                 className="text-xl font-bold"
-                style={{ color: isHomePage && isTop ? "#ffffff" : "var(--secondary-color)" }}
+                // style={{ color: isHomePage && isTop ? "#ffffff" : "var(--secondary-color)" }}
+                style={{ color: "var(--secondary-color)" }}
             >
                 学生団体A4
             </h1>

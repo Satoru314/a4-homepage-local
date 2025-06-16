@@ -29,14 +29,46 @@ const activities = [
 export default function Home() {
   return (
     <div className="relative w-full">
-      <div className="relative flex flex-col h-screen">
+      {/* <div className="relative flex flex-col h-screen">
         <Image
           src="/IMG_5474.jpg"
           alt="Main Image"
           fill
           className="top-0 left-0 object-cover z-0"
         />
+      </div> */}
+      {/* ====== ここから修正部分 ====== */}
+      {/* 画像(2/3)とテキストボックス(1/3)を横並びにするセクション */}
+      {/* h-screenで高さを画面いっぱいに設定、mdサイズ以上で横並び(flex-row)、モバイルでは縦並び(flex-col) */}
+      <div className="flex flex-col md:flex-row h-screen">
+
+        {/* テキストボックス部分（左側に配置したいので先に記述） */}
+        {/* モバイルでは幅いっぱい、mdサイズ以上で幅1/3 */}
+        <div className="w-full md:w-1/3 flex items-center justify-center p-8 bg-gray-100">
+          {/* テキスト内容のコンテナ。必要に応じてスタイルを調整してください。 */}
+          <div className="text-center md:text-left"> {/* モバイルでは中央寄せ、md以上で左寄せ */}
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">神大生に<br />よりよい<br />学生生活を。</h1> {/* 例：タイトル */}
+            {/* 例：さらに詳細な情報や募集に関するボタンなどを追加 */}
+            {/* <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+              詳しく見る
+            </button> */}
+          </div>
+        </div>
+
+        {/* 画像部分（右側に配置したいので後に記述） */}
+        {/* モバイルでは幅いっぱい、mdサイズ以上で幅2/3 */}
+        {/* relativeとh-fullは、Image fillプロパティが正しく機能するために必要 */}
+        <div className="w-full md:w-2/3 relative h-full">
+          <Image
+            src="/IMG_5474.jpg" // 表示したい画像のパス
+            alt="メインビジュアル：学生団体A4の活動風景など" // altテキストは具体的に
+            fill // 親要素いっぱいに画像を広げる
+            className="object-cover z-0" // アスペクト比を維持しつつコンテナを埋める
+          />
+          {/* 画像の上に重ねたい要素があればここに追加 */}
+        </div>
       </div>
+      {/* ====== 修正部分ここまで ====== */}
 
       <div className="flex flex-col items-center justify-center p-16 relative ">
         <SimpleHeading text="学生団体A4とは" />
