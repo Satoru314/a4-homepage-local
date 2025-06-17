@@ -28,7 +28,7 @@ export default function ImageBox({
                     <Image
                         src={path}
                         alt={alt}
-                        layout="fill"
+                        fill
                         className={imageClassName}
                         priority
                     />
