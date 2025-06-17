@@ -74,8 +74,6 @@ export default function Organization() {
                             key={dept.id} // keyは一意なidを使うのがベスト
                             className="flex flex-col items-center bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 text-center"
                         >
-                            {/* 必要であればここに部署アイコンなどを追加 */}
-                            {/* <img src="..." alt={`${dept.name}のアイコン`} className="w-16 h-16 mb-4"/> */}
                             <h3 className="text-xl font-semibold mb-3">
                                 {dept.name}
                             </h3>

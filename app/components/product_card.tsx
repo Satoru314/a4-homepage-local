@@ -1,4 +1,5 @@
 // ProductCard.tsx
+import Image from "next/image";
 
 interface ProductCardProps {
     productName: string;
@@ -24,10 +25,11 @@ export default function ProductCard({
       "
         >
             <div className="relative w-full aspect-video overflow-hidden">
-                <img
+                <Image
                     src={productImage}
                     alt={`プロダクト「${productName}」の画像`}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
             </div>
             <div className="p-6 flex-grow flex flex-col">
