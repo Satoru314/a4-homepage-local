@@ -9,7 +9,7 @@ export default function Contact() {
             <p className="text-lg mb-8 text-gray-600 text-center max-w-2xl">
                 学生団体A4に関するご質問、ご意見、またはご興味をお持ちの方は、<br className="sm:hidden" />以下のフォームよりお気軽にお問い合わせください。
             </p>
-            <form className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+            <form className="w-full max-w-2xl p-6 bg-white rounded-lg shadow-md">
                 <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="name">
                         お名前 <span className="text-red-500">*</span>

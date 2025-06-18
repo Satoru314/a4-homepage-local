@@ -51,20 +51,24 @@ export default function Home() {
         <p className="text-lg text-gray-500 text-center max-w-2xl mb-8">
           何をしてる団体？
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-16">
-          {activities.map((activity) => (
-            <ImageBox
-              key={activity.id}
-              path={activity.path}
-              alt={activity.alt}
+        <div className="border-2 border-gray-300 rounded-lg p-8 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-16">
+            {activities.map((activity) => (
+              <ImageBox
+                key={activity.id}
+                path={activity.path}
+                alt={activity.alt}
 
-            >
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">{activity.title}</h2>
-              <p className="text-gray-600 text-sm">{activity.description}</p>
-            </ImageBox>
-          ))}
+              >
+                <h2 className="text-xl font-semibold text-gray-800 mb-2">{activity.title}</h2>
+                <p className="text-gray-600 text-sm">{activity.description}</p>
+              </ImageBox>
+            ))}
+          </div>
+          <p className="text-lg text-gray-700">
+            <span className="text-xl font-medium">私たちは神戸大学のサークル、A4です。神大生の学生生活を便利にする、アプリの企画・開発・広報を一貫して行っています。</span>
+          </p>
         </div>
-        <div>私たちは神戸大学のサークル、A4です。アプリの企画・開発・広報を一貫して行っています。</div>
 
       </div>
       <SimpleHeading text="活動情報" />
