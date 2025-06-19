@@ -23,13 +23,6 @@ const departments = [
     },
 ];
 
-// 理念データ（シンプルにテキストで定義）
-const philosophy = {
-    title: "私たちの理念",
-    description: "「神大生に最高の学生生活を届ける」",
-    supplement: "私たちは、テクノロジーを活用し、学生の視点からニーズを捉え、神戸大学の学生生活をより豊かで便利なものにすることを目指しています。",
-};
-
 export default function Organization() {
     // 既存の価値観データ
     const values = [
