@@ -65,8 +65,8 @@ export default function Header() {
                 <>
                     {/* 背景オーバーレイ */}
                     <div
-                        className="fixed inset-0 bg-black bg-opacity-50 md:hidden"
-                        style={{ zIndex: 30 }}
+                        className="fixed inset-0 bg-opacity-50 md:hidden"
+                        style={{ zIndex: 30, backgroundColor: "transparent" }}
                         onClick={() => setIsMenuOpen(false)}
                     ></div>
 
