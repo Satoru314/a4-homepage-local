@@ -51,7 +51,7 @@ export default function Home() {
         <p className="text-lg text-gray-500 text-center max-w-2xl mb-8">
           何をしてる団体？
         </p>
-        <div className="border-2 border-gray-300 rounded-lg p-8 mt-8">
+        <div className="border-2 border-gray-300 rounded-lg p-8 mt-8 max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-16">
             {activities.map((activity) => (
               <ImageBox
@@ -65,14 +65,53 @@ export default function Home() {
               </ImageBox>
             ))}
           </div>
-          <p className="text-lg text-gray-700">
-            <span className="text-xl font-medium">私たちは神戸大学のサークル、A4です。神大生の学生生活を便利にする、アプリの企画・開発・広報を一貫して行っています。</span>
+          <p className="text-lg text-gray-700 text-center">
+            <span className="text-xl  font-medium">私たちは神戸大学のサークル、A4です。アプリの企画・開発・広報を一貫して行っています。</span>
           </p>
         </div>
 
       </div>
       <SimpleHeading text="活動情報" />
-      <div >
+
+      {/* 活動日程セクション */}
+      <div className="w-full mx-auto px-4 mb-16 max-w-6xl">
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-gray-800 border-b border-gray-300 pb-2">定期活動</h4>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                  <span className="font-medium">全体ミーティング</span>
+                  <span className="text-gray-600">毎週水曜日 17:00-19:00</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                  <span className="font-medium">部署別作業会</span>
+                  <span className="text-gray-600">隔週で実施</span>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-gray-800 border-b border-gray-300 pb-2">今後の予定</h4>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center p-3 bg-green-50 rounded">
+                  <span className="font-medium">夏合宿</span>
+                  <span className="text-gray-600">8月予定</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-yellow-50 rounded">
+                  <span className="font-medium">六甲祭出展</span>
+                  <span className="text-gray-600">10月予定</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-blue-50 rounded">
+                  <span className="font-medium">新歓イベント</span>
+                  <span className="text-gray-600">4月予定</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full mx-auto px-4 mb-16 max-w-6xl">
         <div className="mt-16 w-full h-96 flex">
 
           <div className="w-full md:w-1/2 h-64 md:h-auto">
@@ -89,7 +128,7 @@ export default function Home() {
           </div>
           <div className="flex-1 h-full p-4 bg-gray-100">
             <h2 className="text-xl font-semibold mb-4">アクセス情報</h2>
-            <p className="text-gray-700">全体ミーティングは学術・産業イノベーション創造本部のダイセルOIホールを借りて行っています。</p>
+            <p className="text-gray-700">全体ミーティングは学術・産業イノベーション創造本部のダイセルOIホールで行っています。</p>
           </div>
         </div>
       </div>
