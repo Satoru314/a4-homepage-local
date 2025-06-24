@@ -105,8 +105,6 @@ export default function Organization() {
                     ))}
                 </div>
             </div>
-            {/* ================================================ */}
-
         </div>
     );
 }

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Footer() {
     return (
         <footer className="border-t-4" style={{ borderColor: 'var(--primary-color)', backgroundColor: 'var(--secondary-color)' }}>
