@@ -63,7 +63,7 @@ export default function Header() {
                             アプリを使う
                         </a>
                     </li>
-                    <li><a href="/organization" >団体紹介</a></li>
+                    <li><a href="/organization" >部署紹介</a></li>
                     <li><a href="/contact" >お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -123,7 +123,7 @@ export default function Header() {
                                         className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
-                                        団体紹介
+                                        部署紹介
                                     </a>
                                 </li>
                                 <li>
