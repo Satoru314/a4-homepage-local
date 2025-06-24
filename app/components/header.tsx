@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
     const [isTop, setIsTop] = useState(true);
@@ -29,20 +30,39 @@ export default function Header() {
                 zIndex: 50,
             }}
         >
-            <h1
-                className={`text-xl font-bold
-    ${isTransparent ? "text-white lg:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
-  `}
-            >
-                学生団体A4
-            </h1>
+            <a href="/home" >
+                <div className="flex items-center space-x-2">
+                    <Image
+                        src="/a4_logo_white_back.png"
+                        alt="A4ロゴ"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8"
+                    />
+                    <h1
+                        className={`text-xl font-bold
+                        ${isTransparent ? "text-white lg:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
+                        `}
+                    >
+                        学生団体A4
+                    </h1>
+                </div>
+            </a>
             <nav
                 className="hidden md:block"
                 style={{ color: isTransparent ? "#ffffff" : "var(--secondary-color)" }}
             >
                 <ul className="flex space-x-4">
                     <li><a href="/home" >ホーム</a></li>
-                    <li><a href="/product" >サービス紹介</a></li>
+                    <li>
+                        <a
+                            href="/product"
+                            className="px-3 py-2 rounded-md "
+                            style={{ backgroundColor: "color-mix(in srgb, var(--primary-color) 50%, transparent)" }}
+                        >
+                            アプリを使う
+                        </a>
+                    </li>
                     <li><a href="/organization" >団体紹介</a></li>
                     <li><a href="/contact" >お問い合わせ</a></li>
                 </ul>
@@ -61,63 +81,65 @@ export default function Header() {
             </button>
 
             {/* モバイルメニュー */}
-            {isMenuOpen && (
-                <>
-                    {/* 背景オーバーレイ */}
-                    <div
-                        className="fixed inset-0 bg-opacity-50 md:hidden"
-                        style={{ zIndex: 30, backgroundColor: "transparent" }}
-                        onClick={() => setIsMenuOpen(false)}
-                    ></div>
+            {
+                isMenuOpen && (
+                    <>
+                        {/* 背景オーバーレイ */}
+                        <div
+                            className="fixed inset-0 bg-opacity-50 md:hidden"
+                            style={{ zIndex: 30, backgroundColor: "transparent" }}
+                            onClick={() => setIsMenuOpen(false)}
+                        ></div>
 
-                    <nav
-                        className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-b-2"
-                        style={{
-                            borderColor: "var(--primary-color)",
-                            zIndex: 40
-                        }}
-                    >
-                        <ul className="flex flex-col">
-                            <li>
-                                <a
-                                    href="/home"
-                                    className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    ホーム
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="/product"
-                                    className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    サービス紹介
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="/organization"
-                                    className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    団体紹介
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="/contact"
-                                    className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    お問い合わせ
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </>
-            )}
-        </header>
+                        <nav
+                            className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-b-2"
+                            style={{
+                                borderColor: "var(--primary-color)",
+                                zIndex: 40
+                            }}
+                        >
+                            <ul className="flex flex-col">
+                                <li>
+                                    <a
+                                        href="/home"
+                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        ホーム
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/product"
+                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        アプリを使う
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/organization"
+                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        団体紹介
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/contact"
+                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        お問い合わせ
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </>
+                )
+            }
+        </header >
     );
 }

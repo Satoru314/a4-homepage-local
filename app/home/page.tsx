@@ -70,7 +70,7 @@ export default function Home() {
             ))}
           </div>
           <p className="text-sm sm:text-base lg:text-lg text-gray-700 text-center">
-            <span className="text-base sm:text-lg lg:text-xl font-medium">私たちは神戸大学のサークル、A4です。アプリの企画・開発・広報を一貫して行っています。</span>
+            <span className="text-base sm:text-lg lg:text-xl font-medium">私たちは神戸大学発の学生団体、A4です！神大生向けアプリの企画・開発・広報を一貫して行っています。</span>
           </p>
         </div>
       </div>

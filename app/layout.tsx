@@ -12,6 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: {
+    default: "学生団体A4",
+    template: "%s | 学生団体A4"
+  },
+  description: "学生団体A4の公式ホームページ",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
