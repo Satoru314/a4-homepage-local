@@ -4,7 +4,7 @@ import SimpleHeading from '../components/simple_heading';
 export default function ProductPage() {
     const products = [
         {
-            productName: "えーご飯",
+            productName: "えーごはん",
             productLink: "https://shindaihub-meal.vercel.app/restaurants",
             productImage: "/スクリーンショット 2025-06-16 093027.png",
             productDescription: "神戸大学周辺のお店を探せるアプリ。",
@@ -24,7 +24,7 @@ export default function ProductPage() {
     ];
 
     return (
-        <div className="container mx-auto px-4 py-8 pt-20 sm:pt-32 mb-4">
+        <div className="container mx-auto px-4 py-4 pt-20 sm:pt-32 mb-4">
             <SimpleHeading text="A4のサービス一覧" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                 {products.map((product) => (

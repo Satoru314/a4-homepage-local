@@ -18,27 +18,27 @@ export default function Header() {
     }, []);
 
     const isHomePage = pathname === "/home";
-    const textColor = isHomePage && isTop ? "#ffffff" : "var(--secondary-color)";
+    const isTransparent = isHomePage && isTop && !isMenuOpen;
+
 
     return (
         <header
-            className="fixed flex items-center justify-between w-full px-4 py-4 md:py-3 border-b-4 transition-all duration-300 h-16 md:h-auto"
+            className={`fixed flex items-center justify-between w-full px-4 py-4 md:py-3 border-b-4 transition-all duration-300 h-16 md:h-auto ${isTransparent ? "bg-transparent" : "bg-white"}`}
             style={{
-                backgroundColor: isHomePage && isTop ? "transparent" : "rgba(255, 255, 255, 1)",
                 borderColor: "var(--primary-color)",
                 zIndex: 50,
             }}
         >
             <h1
                 className={`text-xl font-bold
-    ${isHomePage && isTop ? "text-white lg:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
+    ${isTransparent ? "text-white lg:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
   `}
             >
                 学生団体A4
             </h1>
             <nav
                 className="hidden md:block"
-                style={{ color: isHomePage && isTop ? "#ffffff" : "var(--secondary-color)" }}
+                style={{ color: isTransparent ? "#ffffff" : "var(--secondary-color)" }}
             >
                 <ul className="flex space-x-4">
                     <li><a href="/home" >ホーム</a></li>
@@ -52,8 +52,8 @@ export default function Header() {
             <button
                 className="md:hidden w-8 h-8 flex flex-col justify-center space-y-1 p-1"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                style={{ color: textColor }}
                 aria-label="メニューを開く"
+                style={{ color: isTransparent ? "#ffffff" : "var(--secondary-color)" }}
             >
                 <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
                 <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>

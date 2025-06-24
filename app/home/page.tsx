@@ -129,7 +129,6 @@ export default function Home() {
             ></iframe>
           </div>
           <div className="w-full md:w-1/2 p-6 sm:p-8 bg-gray-100 flex flex-col justify-center">
-            <h2 className="text-lg sm:text-xl font-semibold mb-4">アクセス情報</h2>
             <p className="text-gray-700 text-base sm:text-lg lg:text-xl font-medium  leading-relaxed">全体ミーティングを学術・産業イノベーション創造本部のダイセルOIホールで行っています。</p>
           </div>
         </div>
