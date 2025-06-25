@@ -1,79 +1,161 @@
 import Image from "next/image";
 import ImageBox from "../components/image_box";
 import SimpleHeading from "../components/simple_heading";
+import HeroButton from "../components/hero_button";
+import DepartmentSection from "../components/department_section";
+import HeroImage from "../components/hero_image";
 
 const activities = [
   {
     id: "meeting",
     path: "/IMG_5472.jpg",
-    alt: "プロダクトの企画のアイコン",
-    title: "プロダクトの企画",
-    description: "神大生の学生生活をより便利にするアプリを企画・設計します",
+    alt: "アプリ開発",
+    title: "アプリ制作",
+    description: "神大生向けアプリの企画・開発・広報をサークル内で一貫して行っています。",
   },
   {
     id: "dev",
     path: "/IMG_5471.jpg",
     alt: "アプリ開発のアイコン",
-    title: "アプリ開発",
-    description: "プログラミングを用いて、企画したアプリを実際に作ります",
+    title: "勉強会",
+    description: "プログラミングやマーケティングのスキルを向上させるための勉強会を定期的に開催しています。",
   },
   {
     id: "pr",
     path: "/IMG_5473.jpg",
     alt: "広報活動のアイコン",
-    title: "広報",
-    description: "作ったアプリを神大生にとどけるための広報・渉外活動を行っています",
+    title: "全体ミーティング",
+    description: "部署ごとの進捗共有やアプリの企画を行っています。",
   },
 ]
+
+const departments = [
+  {
+    id: 'dev',
+    name: "開発部",
+    description: "神戸大学の学生生活をより便利に、より豊かにするためのアプリやウェブサービスを企画・設計・開発します。最新の技術トレンドを取り入れながら、ユーザーにとって本当に価値のあるサービスを開発することを目指しています。フロントエンド、バックエンド、モバイルアプリ開発など、幅広い技術領域でメンバーが協力し合い、学びながら成長できる環境を提供します。",
+    imageSrc: "/IMG_5471.jpg",
+    imageAlt: "開発部の活動風景",
+    link: "/organization#dev"
+  },
+  {
+    id: 'org',
+    name: "組織管理部",
+    description: "団体の活動が円滑に進むよう、ミーティング運営、イベント企画、メンバー間のコミュニケーション促進など、組織全体をサポートします。メンバーが最大限のパフォーマンスを発揮できるよう、働きやすい環境づくりや効率的なワークフローの構築に取り組んでいます。また、新メンバーの受け入れやオンボーディング、チームビルディング活動なども担当しています。",
+    imageSrc: "/IMG_5472.jpg",
+    imageAlt: "組織管理部の活動風景",
+    link: "/organization#org"
+  },
+  {
+    id: 'mkt',
+    name: "マーケティング部",
+    description: "開発したプロダクトや団体の活動内容を、様々なチャネルを通じて神大生に広く届け、利用促進や認知度向上を目指します。SNSマーケティング、コンテンツ制作、イベント企画、ブランディングなど多角的なアプローチで、効果的な情報発信を行っています。データ分析に基づいた戦略立案により、ターゲットに響くメッセージを届けることを重視しています。",
+    imageSrc: "/IMG_5473.jpg",
+    imageAlt: "マーケティング部の活動風景",
+    link: "/organization#mkt"
+  },
+];
+
+const heroImages = [
+  { src: "/IMG_5474.jpg", alt: "A4の活動風景 1" },
+  { src: "/IMG_5471.jpg", alt: "A4の活動風景 2" },
+  { src: "/IMG_5472.jpg", alt: "A4の活動風景 3" },
+  { src: "/IMG_5473.jpg", alt: "A4の活動風景 4" },
+  { src: "/IMG_5475.jpg", alt: "A4の活動風景 5" },
+  { src: "/IMG_5476.jpg", alt: "A4の活動風景 6" },
+];
 
 export default function Home() {
   return (
     <div className="relative w-full">
       {/* ヒーローセクション */}
-      <div className="flex flex-col lg:flex-row lg:h-screen">
-        <div className="w-full lg:w-1/3 flex items-center justify-center lg:p-8 bg-gray-100 order-2 lg:order-1 lg:min-h-auto">
-          <div className="text-center lg:text-left max-w-md">
-            <h1 className="hidden lg:block text-3xl sm:text-4xl lg:text-4xl font-bold mb-4 text-gray-800 leading-tight">
+      <div className="flex flex-col lg:flex-row lg:h-screen relative">
+        <div className="w-full lg:w-1/3 flex items-center justify-center lg:p-8 order-2 lg:order-1 lg:min-h-auto">
+          <div className="text-center lg:text-left max-w-md mt-8">
+            <h1 className="hidden lg:block text-3xl sm:text-4xl lg:text-4xl font-bold mb-6 text-gray-800 leading-tight">
               神大生に<br />最高の<br />学生生活を。
             </h1>
+            <HeroButton href="#about" className="hidden lg:block">
+              団体について知る
+            </HeroButton>
           </div>
         </div>
 
-        <div className="w-full lg:w-2/3 relative h-64 sm:h-80 lg:h-screen order-1 lg:order-2">
-          <Image
-            src="/IMG_5474.jpg"
-            alt="A4の活動風景"
-            fill
-            className="object-cover z-0"
-            priority
-          />
+        <HeroImage
+          images={heroImages}
+          priority
+          intervalMs={4000}
+        />
+
+        {/* スクロールインジケーター */}
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 hidden lg:flex flex-col items-center text-white z-20">
+          <span className="text-sm mb-2 font-medium">SCROLL</span>
+          <div className="w-0.5 h-8 bg-white bg-opacity-60 relative">
+            <div className="w-0.5 h-8 bg-white"></div>
+          </div>
+          <svg
+            className="w-4 h-4 mt-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
         </div>
       </div>
 
       {/* 団体紹介セクション */}
-      <div className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-16 relative">
+      <div id="about" className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-16 relative">
         <SimpleHeading text="学生団体A4とは" />
         <p className="text-base sm:text-lg text-gray-500 text-center max-w-2xl mb-6 sm:mb-8">
-          何をしてる団体？
+          何をしている団体なの？
         </p>
-        <div className="border-2 border-gray-300 rounded-lg p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8 max-w-6xl w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-6 sm:pb-8 lg:pb-16">
-            {activities.map((activity) => (
-              <ImageBox
-                key={activity.id}
-                path={activity.path}
-                alt={activity.alt}
-              >
-                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2">{activity.title}</h2>
-                <p className="text-gray-600 text-sm sm:text-base">{activity.description}</p>
-              </ImageBox>
-            ))}
-          </div>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-700 text-center">
-            <span className="text-base sm:text-lg lg:text-xl font-medium">私たちは神戸大学発の学生団体、A4です！神大生向けアプリの企画・開発・広報を一貫して行っています。</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-6 sm:pb-8 lg:pb-16">
+          {activities.map((activity) => (
+            <ImageBox
+              key={activity.id}
+              path={activity.path}
+              alt={activity.alt}
+            >
+              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2">{activity.title}</h2>
+              <p className="text-gray-900 text-sm sm:text-base">{activity.description}</p>
+            </ImageBox>
+          ))}
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4 lg:gap-8">
+          <p className="text-base sm:text-base lg:text-lg text-gray-700 text-center lg:text-left">
+            <span className="text-base sm:text-lg lg:text-xl font-medium">メンバーみんなで協力してアプリを制作しています！</span>
           </p>
+          <HeroButton href="/product" className="lg:mt-0">
+            アプリを使ってみる
+          </HeroButton>
+        </div>
+
+      </div>
+      <div className="w-full text-center mb-16">
+        <SimpleHeading text="部署紹介" />
+
+        <div className="mt-8">
+          {departments.map((dept, index) => (
+            <DepartmentSection
+              key={dept.id}
+              name={dept.name}
+              description={dept.description}
+              imageSrc={dept.imageSrc}
+              imageAlt={dept.imageAlt}
+              reverse={index % 2 === 1} // 奇数番目は画像と文章を反転
+              link={dept.link}
+            />
+          ))}
         </div>
       </div>
+
       <SimpleHeading text="活動情報" />
 
       {/* 活動日程セクション */}

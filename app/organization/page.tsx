@@ -1,8 +1,33 @@
 'use client';
 
+import ImageBox from "../components/image_box";
 import React from "react";
 import SimpleHeading from "../components/simple_heading";
 import DepartmentSection from "../components/department_section";
+
+const activities = [
+    {
+        id: "meeting",
+        path: "/IMG_5472.jpg",
+        alt: "プロダクトの企画のアイコン",
+        title: "プロダクトの企画",
+        description: "神大生の学生生活をより便利にするアプリを企画・設計します",
+    },
+    {
+        id: "dev",
+        path: "/IMG_5471.jpg",
+        alt: "アプリ開発のアイコン",
+        title: "アプリ開発",
+        description: "プログラミングを用いて、企画したアプリを実際に作ります",
+    },
+    {
+        id: "pr",
+        path: "/IMG_5473.jpg",
+        alt: "広報活動のアイコン",
+        title: "広報",
+        description: "作ったアプリを神大生にとどけるための広報・渉外活動を行っています",
+    },
+]
 
 // 部署データ
 const departments = [
@@ -31,11 +56,34 @@ const departments = [
 
 export default function Organization() {
     return (
-        <div className="flex flex-col items-center pt-20 mb-4"> {/* 全体の外側コンテナ */}            {/* ====== 部署紹介セクション ====== */}
+
+        <div className="flex flex-col items-center pt-20 mb-4"> {/* 全体の外側コンテナ */}
+            <div className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-16 relative">
+                <SimpleHeading text="学生団体A4とは" />
+                <p className="text-base sm:text-lg text-gray-500 text-center max-w-2xl mb-6 sm:mb-8">
+                    何をしてる団体？
+                </p>
+                <div className="border-2 border-gray-300 rounded-lg p-4 sm:p-6 lg:p-8 mt-6 sm:mt-8 max-w-6xl w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-6 sm:pb-8 lg:pb-16">
+                        {activities.map((activity) => (
+                            <ImageBox
+                                key={activity.id}
+                                path={activity.path}
+                                alt={activity.alt}
+                            >
+                                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2">{activity.title}</h2>
+                                <p className="text-gray-600 text-sm sm:text-base">{activity.description}</p>
+                            </ImageBox>
+                        ))}
+                    </div>
+                    <p className="text-sm sm:text-base lg:text-lg text-gray-700 text-center">
+                        <span className="text-base sm:text-lg lg:text-xl font-medium">私たちは神戸大学発の学生団体、A4です！神大生向けアプリの企画・開発・広報を一貫して行っています。</span>
+                    </p>
+                </div>
+            </div>          {/* ====== 部署紹介セクション ====== */}
             <div className="w-full text-center mb-16">
                 <SimpleHeading text="部署紹介" />
 
-                {/* 部署セクション */}
                 <div className="mt-8">
                     {departments.map((dept, index) => (
                         <DepartmentSection

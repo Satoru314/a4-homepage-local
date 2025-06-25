@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-    const allowedPaths = ['/home', '/product', '/organization', '/contact'];
+    const allowedPaths = ['/home', '/product', '/organization', '/activities', '/contact'];
     const pathname = request.nextUrl.pathname;
 
     // 静的ファイルや画像へのアクセスを許可

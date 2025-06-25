@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import HeroButton from './hero_button';
 
 interface DepartmentSectionProps {
     name: string;
@@ -7,6 +8,7 @@ interface DepartmentSectionProps {
     imageSrc: string;
     imageAlt: string;
     reverse?: boolean; // 画像と文章の順序を反転させるオプション
+    link?: string; // 詳細ページへのリンク
 }
 
 export default function DepartmentSection({
@@ -14,7 +16,8 @@ export default function DepartmentSection({
     description,
     imageSrc,
     imageAlt,
-    reverse = false
+    reverse = false,
+    link
 }: DepartmentSectionProps) {
     return (
         <div className="w-full max-w-6xl mx-auto px-8 py-12 border-b border-gray-200 last:border-b-0">
@@ -37,9 +40,16 @@ export default function DepartmentSection({
                         {name}
                         <div className="absolute bottom-0 -left-2 -right-2 h-0.5 bg-[var(--primary-color)] rounded-full"></div>
                     </h2>
-                    <p className="text-base text-gray-700 leading-relaxed">
+                    <p className="text-base text-gray-700 leading-relaxed mb-6">
                         {description}
                     </p>
+                    {link && (
+                        <div className="flex justify-center lg:justify-start">
+                            <HeroButton href={link}>
+                                詳細を見る
+                            </HeroButton>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

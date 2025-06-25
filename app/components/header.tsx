@@ -7,19 +7,40 @@ import Image from "next/image";
 export default function Header() {
     const [isTop, setIsTop] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    const [currentHash, setCurrentHash] = useState("");
     const pathname = usePathname();
 
     useEffect(() => {
+        // コンポーネントがマウントされたことを記録
+        setMounted(true);
+
+        // 初期スクロール位置をチェック
+        setIsTop(window.scrollY === 0);
+
+        // 初期ハッシュを設定
+        setCurrentHash(window.location.hash);
+
         const handleScroll = () => {
             setIsTop(window.scrollY === 0);
         };
 
+        const handleHashChange = () => {
+            setCurrentHash(window.location.hash);
+        };
+
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("hashchange", handleHashChange);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("hashchange", handleHashChange);
+        };
     }, []);
 
     const isHomePage = pathname === "/home";
-    const isTransparent = isHomePage && isTop && !isMenuOpen;
+    // mountedがfalseの間は透明化しない
+    const isTransparent = mounted && isHomePage && isTop && !isMenuOpen;
 
 
     return (
@@ -53,18 +74,57 @@ export default function Header() {
                 style={{ color: isTransparent ? "#ffffff" : "var(--secondary-color)" }}
             >
                 <ul className="flex space-x-4">
-                    <li><a href="/home" >ホーム</a></li>
-                    <li>
+                    <li className="relative">
+                        <a href="/home" className="block py-2">ホーム</a>
+                        {pathname === "/home" && currentHash !== "#about" && (
+                            <div
+                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
+                                style={{ backgroundColor: "var(--primary-color)" }}
+                            ></div>
+                        )}
+                    </li>
+                    <li className="relative">
+                        <a href="/home#about" className="block py-2">団体について</a>
+                        {pathname === "/home" && currentHash === "#about" && (
+                            <div
+                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
+                                style={{ backgroundColor: "var(--primary-color)" }}
+                            ></div>
+                        )}
+                    </li>
+                    <li className="relative">
+                        <a href="/activities" className="block py-2">活動内容</a>
+                        {pathname === "/activities" && (
+                            <div
+                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
+                                style={{ backgroundColor: "var(--primary-color)" }}
+                            ></div>
+                        )}
+                    </li>
+                    <li className="relative">
                         <a
                             href="/product"
-                            className="px-3 py-2 rounded-md "
+                            className="px-3 py-2 rounded-md block"
                             style={{ backgroundColor: "color-mix(in srgb, var(--primary-color) 50%, transparent)" }}
                         >
-                            アプリを使う
+                            アプリ一覧
                         </a>
+                        {pathname === "/product" && (
+                            <div
+                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
+                                style={{ backgroundColor: "var(--primary-color)" }}
+                            ></div>
+                        )}
                     </li>
-                    <li><a href="/organization" >部署紹介</a></li>
-                    <li><a href="/contact" >お問い合わせ</a></li>
+                    <li className="relative">
+                        <a href="/contact" className="block py-2">お問い合わせ</a>
+                        {pathname === "/contact" && (
+                            <div
+                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
+                                style={{ backgroundColor: "var(--primary-color)" }}
+                            ></div>
+                        )}
+                    </li>
                 </ul>
             </nav>
 
@@ -110,20 +170,29 @@ export default function Header() {
                                 </li>
                                 <li>
                                     <a
-                                        href="/product"
+                                        href="/home#about"
                                         className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
-                                        アプリを使う
+                                        団体について
                                     </a>
                                 </li>
                                 <li>
                                     <a
-                                        href="/organization"
+                                        href="/activities"
                                         className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
-                                        部署紹介
+                                        活動内容
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/product"
+                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        アプリ一覧
                                     </a>
                                 </li>
                                 <li>
