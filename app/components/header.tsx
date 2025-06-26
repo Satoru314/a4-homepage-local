@@ -39,7 +39,6 @@ export default function Header() {
     }, []);
 
     const isHomePage = pathname === "/home";
-    // mountedがfalseの間は透明化しない
     const isTransparent = mounted && isHomePage && isTop && !isMenuOpen;
 
 

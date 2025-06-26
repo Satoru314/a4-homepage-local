@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ImageBox from "../components/image_box";
 import SimpleHeading from "../components/simple_heading";
 import HeroButton from "../components/hero_button";
