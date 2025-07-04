@@ -73,34 +73,16 @@ export default function Header() {
                 style={{ color: isTransparent ? "#ffffff" : "var(--secondary-color)" }}
             >
                 <ul className="flex space-x-4">
-                    <li className="relative">
+                    <li>
                         <a href="/home" className="block py-2">ホーム</a>
-                        {pathname === "/home" && currentHash !== "#about" && (
-                            <div
-                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
-                                style={{ backgroundColor: "var(--primary-color)" }}
-                            ></div>
-                        )}
                     </li>
-                    <li className="relative">
+                    <li>
                         <a href="/home#about" className="block py-2">団体について</a>
-                        {pathname === "/home" && currentHash === "#about" && (
-                            <div
-                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
-                                style={{ backgroundColor: "var(--primary-color)" }}
-                            ></div>
-                        )}
                     </li>
-                    <li className="relative">
+                    <li>
                         <a href="/activities" className="block py-2">活動内容</a>
-                        {pathname === "/activities" && (
-                            <div
-                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
-                                style={{ backgroundColor: "var(--primary-color)" }}
-                            ></div>
-                        )}
                     </li>
-                    <li className="relative">
+                    <li>
                         <a
                             href="/product"
                             className="px-3 py-2 rounded-md block"
@@ -108,21 +90,9 @@ export default function Header() {
                         >
                             アプリ一覧
                         </a>
-                        {pathname === "/product" && (
-                            <div
-                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
-                                style={{ backgroundColor: "var(--primary-color)" }}
-                            ></div>
-                        )}
                     </li>
-                    <li className="relative">
+                    <li>
                         <a href="/contact" className="block py-2">お問い合わせ</a>
-                        {pathname === "/contact" && (
-                            <div
-                                className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300"
-                                style={{ backgroundColor: "var(--primary-color)" }}
-                            ></div>
-                        )}
                     </li>
                 </ul>
             </nav>

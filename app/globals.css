@@ -6,6 +6,8 @@
   --background-secondary: #348abf;
   --secondary-color: #2d5a73;
   --primary-color: #99c5df;
+  --button-blue: #3b82f6;
+  /* ボタン用の青色 (Tailwind blue-500相当) */
 }
 
 
