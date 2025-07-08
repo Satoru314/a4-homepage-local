@@ -1,38 +1,14 @@
-import ImageBox from "../components/image_box";
 import SimpleHeading from "../components/simple_heading";
 import HeroButton from "../components/hero_button";
 import DepartmentSection from "../components/department_section";
 import HeroImage from "../components/hero_image";
 
-const activities = [
-  {
-    id: "meeting",
-    path: "/IMG_5472.jpg",
-    alt: "アプリ開発",
-    title: "アプリ制作",
-    description: "神大生向けアプリの企画・開発・広報をサークル内で一貫して行っています。",
-  },
-  {
-    id: "dev",
-    path: "/IMG_5471.jpg",
-    alt: "アプリ開発のアイコン",
-    title: "勉強会",
-    description: "プログラミングやマーケティングのスキルを向上させるための勉強会を定期的に開催しています。",
-  },
-  {
-    id: "pr",
-    path: "/IMG_5473.jpg",
-    alt: "広報活動のアイコン",
-    title: "全体ミーティング",
-    description: "部署ごとの進捗共有やアプリの企画を行っています。",
-  },
-]
-
 const departments = [
   {
     id: 'dev',
     name: "開発部",
-    description: "神戸大学の学生生活をより便利に、より豊かにするためのアプリやウェブサービスを企画・設計・開発します。最新の技術トレンドを取り入れながら、ユーザーにとって本当に価値のあるサービスを開発することを目指しています。フロントエンド、バックエンド、モバイルアプリ開発など、幅広い技術領域でメンバーが協力し合い、学びながら成長できる環境を提供します。",
+    description: `神戸大学の学生生活をより便利にするアプリを、プログラミングを用いて制作しています。
+    `,
     imageSrc: "/IMG_5471.jpg",
     imageAlt: "開発部の活動風景",
     link: "/organization#dev"
@@ -40,7 +16,9 @@ const departments = [
   {
     id: 'org',
     name: "組織管理部",
-    description: "団体の活動が円滑に進むよう、ミーティング運営、イベント企画、メンバー間のコミュニケーション促進など、組織全体をサポートします。メンバーが最大限のパフォーマンスを発揮できるよう、働きやすい環境づくりや効率的なワークフローの構築に取り組んでいます。また、新メンバーの受け入れやオンボーディング、チームビルディング活動なども担当しています。",
+    description: `「組織開発」という分野の知識を応用しながらA4のメンバーが最大限実力を活躍し、最高のプロダクトを制作できるように働きかける部署です。
+物事の本質を考え抜き、大胆に行動することが特徴です！
+「考える」に対してより深く理解し、根気強く行動する人の育成を目指しています。`,
     imageSrc: "/IMG_5472.jpg",
     imageAlt: "組織管理部の活動風景",
     link: "/organization#org"
@@ -120,35 +98,69 @@ export default function Home() {
           priority
           intervalMs={4000}
         />
+
+        {/* スマホ用オーバーレイテキスト */}
+        <div className="sm:hidden absolute inset-0 flex items-center justify-center">
+          <div className="border-2 border-white p-6 flex flex-col items-center">
+            <h1 className="text-2xl font-bold text-white text-center mb-4" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', height: '200px' }}>
+              神大生に最高の 学生生活を。
+            </h1>
+          </div>
+        </div>
       </div>
 
       {/* 団体紹介セクション */}
       <div id="about" className="flex flex-col items-center justify-center p-6 sm:p-8 lg:p-16 relative">
         <SimpleHeading text="学生団体A4とは" />
-        <p className="text-base sm:text-lg text-gray-500 text-center max-w-2xl mb-6 sm:mb-8">
-          何をしている団体なの？
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-6 sm:pb-8 lg:pb-16">
-          {activities.map((activity) => (
-            <ImageBox
-              key={activity.id}
-              path={activity.path}
-              alt={activity.alt}
-            >
-              <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2">{activity.title}</h2>
-              <p className="text-gray-900 text-sm sm:text-base">{activity.description}</p>
-            </ImageBox>
-          ))}
+
+        {/* 画像とテキストのセクション */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-12 max-w-6xl mb-8">
+          <div className="w-full lg:w-1/2">
+            <img
+              src="/a4_logo_white_back.png"
+              alt="A4の活動風景"
+              className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-md"
+            />
+          </div>
+          <div className="w-full lg:w-1/2 text-left">
+            <h3 className="text-base sm:text-lg text-gray-700 mb-4 leading-relaxed">
+              私たちは作りたいものを作るのではなく、<br />
+              神大生にとって価値のあるものを作ります。<br />
+              <br />
+              神大生が抱える課題について考え、<br />
+              その課題を解決できるアプリを作る。<br />
+              作ったアプリを宣伝し、ユーザーに届ける。<br />
+              つまり、企画・開発・広報を一貫してチームで行うサークルがA4です。
+            </h3>
+          </div>
         </div>
+
         <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-4 lg:gap-8">
-          <p className="text-base sm:text-base lg:text-lg text-gray-700 text-center lg:text-left">
-            <span className="text-base sm:text-lg lg:text-xl font-medium">メンバーみんなで協力してアプリを制作しています！</span>
-          </p>
+
           <HeroButton href="/product" className="lg:mt-0">
             アプリを使ってみる
           </HeroButton>
         </div>
       </div>
+
+      <div className="w-full text-center mb-16">
+        <SimpleHeading text="部署紹介" />
+
+        <div className="mt-8">
+          {departments.map((dept, index) => (
+            <DepartmentSection
+              key={dept.id}
+              name={dept.name}
+              description={dept.description}
+              imageSrc={dept.imageSrc}
+              imageAlt={dept.imageAlt}
+              reverse={index % 2 === 1} // 奇数番目は画像と文章を反転
+              link={dept.link}
+            />
+          ))}
+        </div>
+      </div>
+
       <div className="w-full py-6 sm:py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <SimpleHeading text="ニュース" />
@@ -188,23 +200,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full text-center mb-16">
-        <SimpleHeading text="部署紹介" />
-
-        <div className="mt-8">
-          {departments.map((dept, index) => (
-            <DepartmentSection
-              key={dept.id}
-              name={dept.name}
-              description={dept.description}
-              imageSrc={dept.imageSrc}
-              imageAlt={dept.imageAlt}
-              reverse={index % 2 === 1} // 奇数番目は画像と文章を反転
-              link={dept.link}
-            />
-          ))}
-        </div>
-      </div>
 
       <SimpleHeading text="活動情報" />
 
