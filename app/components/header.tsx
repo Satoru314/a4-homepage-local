@@ -8,7 +8,6 @@ export default function Header() {
     const [isTop, setIsTop] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
-    const [currentHash, setCurrentHash] = useState("");
     const pathname = usePathname();
 
     useEffect(() => {
@@ -18,23 +17,14 @@ export default function Header() {
         // 初期スクロール位置をチェック
         setIsTop(window.scrollY === 0);
 
-        // 初期ハッシュを設定
-        setCurrentHash(window.location.hash);
-
         const handleScroll = () => {
             setIsTop(window.scrollY === 0);
         };
 
-        const handleHashChange = () => {
-            setCurrentHash(window.location.hash);
-        };
-
         window.addEventListener("scroll", handleScroll);
-        window.addEventListener("hashchange", handleHashChange);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("hashchange", handleHashChange);
         };
     }, []);
 
