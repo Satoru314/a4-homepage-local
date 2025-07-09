@@ -6,6 +6,7 @@ interface ProductCardProps {
     productLink: string;
     productImage: string; // 画像のURLまたはパス
     productDescription: string;
+    reverse?: boolean; // 画像と文章の順序を反転させるオプション
 }
 
 export default function ProductCard({
@@ -13,32 +14,36 @@ export default function ProductCard({
     productLink,
     productImage,
     productDescription,
+    reverse = false,
 }: ProductCardProps) {
     return (
         <a
             href={productLink}
             target="_blank" // 新しいタブで開く (外部リンクの場合)
             rel="noopener noreferrer"
-            className=" bg-white rounded-lg shadow-lg 
-        hover:shadow-xl transition-all duration-300 
-        overflow-hidden group h-full flex flex-col
-      "
+            className="w-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
         >
-            <div className="relative w-full aspect-video overflow-hidden">
-                <Image
-                    src={productImage}
-                    alt={`プロダクト「${productName}」の画像`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-            </div>
-            <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                    {productName}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                    {productDescription}
-                </p>
+            <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} h-full`}>
+                <div className="w-full lg:w-1/2">
+                    <div className="relative aspect-video w-full overflow-hidden lg:rounded-none rounded-t-lg border-2 border-gray-200">
+                        <Image
+                            src={productImage}
+                            alt={`プロダクト「${productName}」の画像`}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                    </div>
+                </div>
+
+                <div className="w-full lg:w-1/2 p-6 lg:p-8">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 relative inline-block">
+                        {productName}
+                        <div className="absolute bottom-0 -left-2 -right-2 h-0.5 bg-[var(--primary-color)] rounded-full"></div>
+                    </h3>
+                    <p className="text-base text-gray-700 leading-relaxed">
+                        {productDescription}
+                    </p>
+                </div>
             </div>
         </a>
     );

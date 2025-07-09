@@ -37,7 +37,7 @@ const news = [
 
 export default function NewsSection() {
     return (
-        <div className="w-full py-6 sm:py-8">
+        <div className="w-full py-8">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
                 <SimpleHeading text="ニュース" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">

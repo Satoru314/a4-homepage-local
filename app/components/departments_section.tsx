@@ -33,7 +33,7 @@ const departments = [
 
 export default function DepartmentsSection() {
     return (
-        <div className="w-full text-center mb-16">
+        <div className="w-full text-center">
             <SimpleHeading text="部署紹介" />
 
             <div>

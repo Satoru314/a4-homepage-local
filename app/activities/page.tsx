@@ -59,7 +59,7 @@ const projects = [
 
 export default function Activities() {
     return (
-        <div className="flex flex-col items-center pt-32 mb-4">
+        <div className="flex flex-col items-center pt-18 mb-4">
 
             {/* ====== 活動内容概要セクション ====== */}
             <div className="w-full text-center mb-16">
@@ -104,10 +104,10 @@ export default function Activities() {
                                     {project.name}
                                 </h3>
                                 <span className={`px-2 py-1 text-xs rounded-full ${project.status === 'リリース済み'
-                                        ? 'bg-green-100 text-green-800'
-                                        : project.status === '開発中'
-                                            ? 'bg-blue-100 text-blue-800'
-                                            : 'bg-yellow-100 text-yellow-800'
+                                    ? 'bg-green-100 text-green-800'
+                                    : project.status === '開発中'
+                                        ? 'bg-blue-100 text-blue-800'
+                                        : 'bg-yellow-100 text-yellow-800'
                                     }`}>
                                     {project.status}
                                 </span>

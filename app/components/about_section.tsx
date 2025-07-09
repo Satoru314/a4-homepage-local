@@ -4,7 +4,7 @@ import HeroButton from "./hero_button";
 export default function AboutSection() {
     return (
         <div className="flex flex-col items-center justify-center p-6 sm:p-8 relative">
-            <div id="about" className="absolute -top-16"></div>
+            <div id="about" className="absolute -top-10"></div>
             <SimpleHeading text="学生団体A4とは" />
 
             {/* 画像とテキストのセクション */}

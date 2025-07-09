@@ -24,17 +24,22 @@ export default function ProductPage() {
     ];
 
     return (
-        <div className="container mx-auto px-4 py-4 pt-20 sm:pt-32 mb-4">
-            <SimpleHeading text="A4のサービス一覧" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-                {products.map((product) => (
-                    <ProductCard
-                        key={product.productName} // product.name を productName に合わせる
-                        productName={product.productName}
-                        productLink={product.productLink}
-                        productImage={product.productImage}
-                        productDescription={product.productDescription}
-                    />
+        <div className="container mx-auto px-4 py-4 pt-18 mb-4">
+            <SimpleHeading text="A4のアプリ一覧" />
+            <div className="max-w-6xl mx-auto">
+                {products.map((product, index) => (
+                    <div
+                        key={product.productName}
+                        className={`${index !== 0 ? 'border-t border-gray-200 pt-8' : ''} ${index !== products.length - 1 ? 'pb-8' : ''}`}
+                    >
+                        <ProductCard
+                            productName={product.productName}
+                            productLink={product.productLink}
+                            productImage={product.productImage}
+                            productDescription={product.productDescription}
+                            reverse={index % 2 === 1} // 奇数番目のアイテムは逆順にする
+                        />
+                    </div>
                 ))}
             </div>
         </div>
