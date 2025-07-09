@@ -117,14 +117,14 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-12 max-w-6xl mb-8">
           <div className="w-full lg:w-1/2">
             <img
-              src="/a4_logo_white_back.png"
+              src="/IMG_5474_trimming.jpg"
               alt="A4の活動風景"
               className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-md"
             />
           </div>
           <div className="w-full lg:w-1/2 text-left">
             <h3 className="text-base sm:text-lg text-gray-700 mb-4 leading-relaxed">
-              私たちは作りたいものを作るのではなく、<br />
+              <br />私たちは作りたいものを作るのではなく、<br />
               神大生にとって価値のあるものを作ります。<br />
               <br />
               神大生が抱える課題について考え、<br />
@@ -132,14 +132,10 @@ export default function Home() {
               作ったアプリを宣伝し、ユーザーに届ける。<br />
               つまり、企画・開発・広報を一貫してチームで行うサークルがA4です。
             </h3>
+            <HeroButton href="/product" className="mt-6 text-center lg:text-left mx-auto lg:mx-0">
+              アプリを使ってみる
+            </HeroButton>
           </div>
-        </div>
-
-        <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-4 lg:gap-8">
-
-          <HeroButton href="/product" className="lg:mt-0">
-            アプリを使ってみる
-          </HeroButton>
         </div>
       </div>
 
