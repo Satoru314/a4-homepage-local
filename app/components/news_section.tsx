@@ -3,39 +3,30 @@ import SimpleHeading from "./simple_heading";
 const news = [
     {
         id: 1,
-        date: "2025.06.20",
+        date: "2025.7.20",
         category: "お知らせ",
-        title: "夏合宿の詳細が決定しました",
-        description: "今年の夏合宿は8月15日〜17日に兵庫県淡路島で開催予定です。開発集中期間とチームビルディングを予定しています。",
-        isNew: true
+        title: "A4のホームページを作成しました。",
+        description: "学生団体A4の公式ホームページを作成しました。今後、活動内容やイベント情報などを掲載していきます。"
     },
     {
         id: 2,
-        date: "2025.06.15",
-        category: "イベント",
-        title: "新メンバー歓迎会を開催しました",
-        description: "6月の新メンバー歓迎会が無事終了しました。新しい仲間とともにA4の活動がさらに活発になりそうです。",
-        isNew: true
-    },
-    {
-        id: 3,
-        date: "2025.06.10",
+        date: "2025.7.20",
         category: "リリース",
-        title: "神大生向け時間割アプリをアップデートしました",
-        description: "バグ修正と新機能を追加したv2.1をリリースしました。より使いやすくなった時間割管理をお試しください。",
-        isNew: false
-    },
-    {
-        id: 4,
-        date: "2025.06.05",
-        category: "お知らせ",
-        title: "組織管理部の新体制がスタートしました",
-        description: "組織管理部に新しいリーダーが就任し、より効率的な運営体制を構築していきます。",
-        isNew: false
+        title: "えー授業をリリースしました。",
+        description: "神戸大学の授業レビューを検索できるアプリ、えー授業をリリースしました。ぜひご利用ください。"
     }
 ];
 
 export default function NewsSection() {
+    // 投稿が1ヶ月以内かどうかをチェックする関数
+    const currentDate = new Date();
+    const oneMonthAgo = new Date();
+    oneMonthAgo.setMonth(currentDate.getMonth() - 1); // 1ヶ月前の日付
+    const isRecent = (dateString: string) => {
+        const postDate = new Date(dateString.replace(/\./g, '-')); // YYYY.MM.DD形式をYYYY-MM-DD形式に変換
+        return postDate >= oneMonthAgo;
+    };
+
     return (
         <div className="w-full py-8">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -56,7 +47,7 @@ export default function NewsSection() {
                                             }`}>
                                             {item.category}
                                         </span>
-                                        {item.isNew && (
+                                        {isRecent(item.date) && (
                                             <span className="bg-red-500 text-white px-1 py-0.5 rounded-full text-xs font-bold">
                                                 NEW
                                             </span>

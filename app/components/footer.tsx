@@ -26,7 +26,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="/product"
+                                    href="/home#about"
                                     className="text-gray-300 hover:text-white transition-colors text-sm"
                                 >
                                     団体について
@@ -35,6 +35,14 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="/organization"
+                                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                                >
+                                    部署紹介
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/product"
                                     className="text-gray-300 hover:text-white transition-colors text-sm"
                                 >
                                     アプリ一覧

@@ -70,6 +70,9 @@ export default function Header() {
                         <a href="/home#about" className="block py-2">団体について</a>
                     </li>
                     <li>
+                        <a href="/organization" className="block py-2">部署紹介</a>
+                    </li>
+                    <li>
                         <a
                             href="/product"
                             className="px-3 py-2 rounded-md block"
@@ -131,6 +134,15 @@ export default function Header() {
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         団体について
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/organization"
+                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        部署紹介
                                     </a>
                                 </li>
                                 <li>
