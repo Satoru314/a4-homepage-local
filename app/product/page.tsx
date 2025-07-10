@@ -4,6 +4,12 @@ import SimpleHeading from '../components/simple_heading';
 export default function ProductPage() {
     const products = [
         {
+            productName: "神大HUB",
+            productLink: "https://kobe-uni-hub.vercel.app/",
+            productImage: "/スクリーンショット 2025-07-10 174452.png",
+            productDescription: <>学生団体A4のポータルサイトです。<br />授業やサークル、イベント情報など、神戸大学に関する様々な情報を提供します。</>,
+        },
+        {
             productName: "えーごはん",
             productLink: "https://shindaihub-meal.vercel.app/restaurants",
             productImage: "/スクリーンショット 2025-06-16 093027.png",
