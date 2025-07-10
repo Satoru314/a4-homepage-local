@@ -7,19 +7,19 @@ export default function ProductPage() {
             productName: "えーごはん",
             productLink: "https://shindaihub-meal.vercel.app/restaurants",
             productImage: "/スクリーンショット 2025-06-16 093027.png",
-            productDescription: "神戸大学周辺のお店を探せるアプリ。",
+            productDescription: <>神戸大学周辺のお店を探せるアプリです。<br />メニューや営業時間、場所などの情報が見れます。<br />えーごはん限定のクーポンもあります。</>,
         },
         {
             productName: "えー授業",
-            productLink: "https://shindaihub-class-front-deployment2.vercel.app/classes",
+            productLink: "https://shindaihub-class.vercel.app/classes",
             productImage: "/スクリーンショット 2025-06-16 093245.png",
-            productDescription: "神戸大学の授業レビューが見れるアプリ。",
+            productDescription: <>神戸大学の授業レビューが見れるアプリです。<br />単位の取りやすさや採点方式、受けた人の感想などが見れます。</>,
         },
         {
             productName: "神大マップ",
             productLink: "https://kobe-uni-hub.vercel.app/campus-map",
             productImage: "/スクリーンショット 2025-06-16 093320.png",
-            productDescription: "神戸大学のマップアプリ。棟を検索できます。",
+            productDescription: <>神戸大学のマップアプリです。<br />教室や施設の場所を簡単に探せます。</>,
         },
     ];
 

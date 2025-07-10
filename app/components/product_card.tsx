@@ -1,11 +1,12 @@
 // ProductCard.tsx
 import Image from "next/image";
+import React from "react";
 
 interface ProductCardProps {
     productName: string;
     productLink: string;
     productImage: string; // 画像のURLまたはパス
-    productDescription: string;
+    productDescription: React.ReactNode;
     reverse?: boolean; // 画像と文章の順序を反転させるオプション
 }
 
@@ -21,11 +22,11 @@ export default function ProductCard({
             href={productLink}
             target="_blank" // 新しいタブで開く (外部リンクの場合)
             rel="noopener noreferrer"
-            className="w-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+            className="w-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
         >
             <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} h-full`}>
                 <div className="w-full lg:w-1/2">
-                    <div className="relative aspect-video w-full overflow-hidden lg:rounded-none rounded-t-lg border-2 border-gray-200">
+                    <div className="relative aspect-video w-full overflow-hidden rounded-lg border-2 border-gray-200 group cursor-pointer">
                         <Image
                             src={productImage}
                             alt={`プロダクト「${productName}」の画像`}
