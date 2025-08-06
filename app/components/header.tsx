@@ -67,10 +67,7 @@ export default function Header() {
                         <a href="/home" className="block py-2">ホーム</a>
                     </li>
                     <li>
-                        <a href="/home#about" className="block py-2">団体について</a>
-                    </li>
-                    <li>
-                        <a href="/activities" className="block py-2">活動内容</a>
+                        <a href="/organization" className="block py-2">部署紹介</a>
                     </li>
                     <li>
                         <a
@@ -129,20 +126,11 @@ export default function Header() {
                                 </li>
                                 <li>
                                     <a
-                                        href="/home#about"
+                                        href="/organization"
                                         className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
-                                        団体について
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/activities"
-                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        活動内容
+                                        部署紹介
                                     </a>
                                 </li>
                                 <li>
