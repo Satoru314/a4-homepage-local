@@ -1,18 +1,14 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { FaReact, FaNodeJs, FaFigma } from 'react-icons/fa';
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiFirebase, SiGithub } from 'react-icons/si';
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiGithub, SiGo } from 'react-icons/si';
 
 const techStack = [
     { name: 'Next.js', icon: <SiNextdotjs className="w-12 h-12" /> },
-    { name: 'React', icon: <FaReact className="w-12 h-12" /> },
     { name: 'TypeScript', icon: <SiTypescript className="w-12 h-12" /> },
-    { name: 'Node.js', icon: <FaNodeJs className="w-12 h-12" /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-12 h-12" /> },
-    { name: 'Firebase', icon: <SiFirebase className="w-12 h-12" /> },
+    { name: 'Golang', icon: <SiGo className="w-12 h-12" /> },
     { name: 'Vercel', icon: <SiVercel className="w-12 h-12" /> },
-    { name: 'Figma', icon: <FaFigma className="w-12 h-12" /> },
     { name: 'GitHub', icon: <SiGithub className="w-12 h-12" /> },
 ];
 
@@ -26,7 +22,7 @@ export default function DevDepartment() {
                     fill
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-wider">開発部</h2>
                 </div>
             </div>

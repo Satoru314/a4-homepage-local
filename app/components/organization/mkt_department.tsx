@@ -32,8 +32,9 @@ export default function MktDepartment() {
                     alt="マーケティング部の活動風景"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-wider">マーケティング部</h2>
                 </div>
             </div>

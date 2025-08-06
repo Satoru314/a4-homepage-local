@@ -21,7 +21,7 @@ export default function OrgDepartment() {
                     fill
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-wider">組織管理部</h2>
                 </div>
             </div>

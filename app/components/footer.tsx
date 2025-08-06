@@ -26,14 +26,6 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="/home#about"
-                                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                                >
-                                    団体について
-                                </a>
-                            </li>
-                            <li>
-                                <a
                                     href="/organization"
                                     className="text-gray-300 hover:text-white transition-colors text-sm"
                                 >
