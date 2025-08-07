@@ -31,7 +31,7 @@ export default function HeroSection() {
             />
 
             {/* スマホ用オーバーレイテキスト */}
-            <div className="sm:hidden absolute inset-0 flex items-center justify-center">
+            <div className="lg:hidden absolute inset-0 flex items-center justify-center">
                 <div className="border-2 border-white p-6 flex flex-col items-center">
                     <h1 className="text-2xl font-bold text-white text-center mb-4" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', height: '200px' }}>
                         神大生に最高の 学生生活を。
