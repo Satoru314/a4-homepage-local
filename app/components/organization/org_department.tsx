@@ -1,13 +1,12 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { FaSlack, FaTrello, FaGoogleDrive } from 'react-icons/fa';
+import { FaSlack, FaGoogleDrive } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 
 const tools = [
     { name: 'Slack', description: 'リアルタイムのコミュニケーションと情報共有', icon: <FaSlack className="w-12 h-12 text-[#4A154B]" /> },
     { name: 'Notion', description: 'ドキュメント管理、タスク管理、情報集約', icon: <SiNotion className="w-12 h-12 text-black" /> },
-    { name: 'Trello', description: 'カンバン方式でのタスクとプロジェクト管理', icon: <FaTrello className="w-12 h-12 text-[#0079BF]" /> },
     { name: 'Google Drive', description: 'ファイル共有、共同編集、クラウドストレージ', icon: <FaGoogleDrive className="w-12 h-12 text-[#4285F4]" /> },
 ];
 
