@@ -1,5 +1,6 @@
 import SimpleHeading from "./simple_heading";
 import HeroButton from "./hero_button";
+import Image from "next/image";
 
 export default function AboutSection() {
     return (
@@ -10,10 +11,12 @@ export default function AboutSection() {
             {/* 画像とテキストのセクション */}
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12 max-w-6xl mb-8">
                 <div className="w-full md:w-1/2">
-                    <img
+                    <Image
                         src="/IMG_5474_trimming.jpg"
                         alt="A4の活動風景"
-                        className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-md"
+                        width={600}
+                        height={400}
+                        className="w-full h-64 md:h-96 object-cover rounded-lg shadow-md"
                     />
                 </div>
                 <div className="w-full md:w-1/2 text-left">

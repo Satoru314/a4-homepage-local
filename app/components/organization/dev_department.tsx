@@ -4,11 +4,10 @@ import Image from 'next/image';
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiGithub, SiGo } from 'react-icons/si';
 
 const techStack = [
-    { name: 'Next.js', icon: <SiNextdotjs className="w-10 h-10" /> },
-    { name: 'TypeScript', icon: <SiTypescript className="w-10 h-10" /> },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-10 h-10" /> },
-    { name: 'Golang', icon: <SiGo className="w-10 h-10" /> },
-    { name: 'Vercel', icon: <SiVercel className="w-10 h-10" /> },
+    { name: 'Next.js', icon: <SiNextdotjs className="w-8 h-8" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="w-8 h-8" /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-8 h-8" /> },
+    { name: 'Golang', icon: <SiGo className="w-8 h-8" /> },
     { name: 'GitHub', icon: <SiGithub className="w-10 h-10" /> },
 ];
 
@@ -17,7 +16,7 @@ export default function DevDepartment() {
         <div>
             <div id="dev" className="absolute -translate-y-20"></div>
             <section className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div className="relative w-full h-24 md:h-32">
+                <div className="relative w-full h-32">
                     <Image
                         src="/IMG_5471.jpg"
                         alt="開発部の活動風景"
@@ -37,7 +36,7 @@ export default function DevDepartment() {
                     </div>
 
                     <div className="mt-4">
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">技術スタック</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">主な使用技術</h3>
                         <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4">
                             {techStack.map((tech) => (
                                 <div key={tech.name} className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-300">

@@ -26,7 +26,7 @@ export default function MktDepartment() {
 
             <div id="mkt" className="absolute -translate-y-20"></div>
             <section className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div className="relative w-full h-24 md:h-32">
+                <div className="relative w-full h-32">
                     <Image
                         src="/IMG_5473.jpg"
                         alt="マーケティング部の活動風景"
