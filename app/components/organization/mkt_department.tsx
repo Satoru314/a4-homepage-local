@@ -4,20 +4,17 @@ import Image from 'next/image';
 
 const pastWorks = [
     {
-        title: '新歓ビラ 2025',
-        description: '2025年度新歓活動で使用したビラ。A4の魅力と活動内容を分かりやすく伝えました。',
+        title: '六甲祭ビラ 2024',
         imageSrc: '/スクリーンショット 2025-06-16 093027.png',
+        imageAlt: '六甲祭ビラ 2024のデザイン'
+    },
+    {
+        title: '新歓ビラ 2025',
+        imageSrc: '/スクリーンショット 2025-06-16 093245.png',
         imageAlt: '新歓ビラ 2025のデザイン'
     },
     {
-        title: '団体紹介スライド',
-        description: '説明会やイベントで使用するスライド。写真や図を多く使い、視覚的にアピールしました。',
-        imageSrc: '/スクリーンショット 2025-06-16 093245.png',
-        imageAlt: '団体紹介スライドのデザイン'
-    },
-    {
         title: 'SNS投稿コンテンツ',
-        description: 'InstagramやXで定期的に発信する画像コンテンツ。イベント告知や活動報告が中心です。',
         imageSrc: '/スクリーンショット 2025-06-16 093320.png',
         imageAlt: 'SNS投稿コンテンツのデザイン'
     },
@@ -29,7 +26,7 @@ export default function MktDepartment() {
 
             <div id="mkt" className="absolute -translate-y-20"></div>
             <section className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div className="relative w-full h-48 md:h-56 lg:h-64">
+                <div className="relative w-full h-24 md:h-32">
                     <Image
                         src="/IMG_5473.jpg"
                         alt="マーケティング部の活動風景"
@@ -42,15 +39,16 @@ export default function MktDepartment() {
                     </div>
                 </div>
 
-                <div className="p-6 md:p-8 lg:p-10">
+                <div className="p-6 md:p-10">
                     <div className="max-w-3xl mx-auto text-center">
                         <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                            開発したプロダクトや団体の活動内容を、様々なチャネルを通じて神大生に広く届け、利用促進や認知度向上を目指します。SNSマーケティング、コンテンツ制作、イベント企画、ブランディングなど多角的なアプローチで、効果的な情報発信を行っています。データ分析に基づいた戦略立案により、ターゲットに響くメッセージを届けることを重視しています。
+                            開発したプロダクトや団体の活動内容を、外部に発信する部署です。<br />
+                            SNSマーケティング、デザイン、コンテンツ制作、イベント企画等を行っています。
                         </p>
                     </div>
 
-                    <div className="mt-10 md:mt-12">
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-8">これまでの制作物</h3>
+                    <div className="mt-6 md:mt-8">
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">これまでの制作物</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                             {pastWorks.map((work) => (
                                 <div key={work.title} className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
@@ -64,7 +62,6 @@ export default function MktDepartment() {
                                     </div>
                                     <div className="p-4">
                                         <h4 className="text-lg font-bold text-gray-800">{work.title}</h4>
-                                        <p className="text-sm text-gray-600 mt-1">{work.description}</p>
                                     </div>
                                 </div>
                             ))}

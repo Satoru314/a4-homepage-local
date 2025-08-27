@@ -7,50 +7,41 @@ interface ContactFormData {
 }
 
 export async function POST(request: NextRequest) {
-  try {
-    const body: ContactFormData = await request.json();
-    const { name, email, message } = body;
+  const body: ContactFormData = await request.json();
+  const { name, email, message } = body;
 
-    // バリデーション
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: '必須項目が入力されていません。' },
-        { status: 400 }
-      );
-    }
-
-    // メールアドレスの簡易バリデーション
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: '有効なメールアドレスを入力してください。' },
-        { status: 400 }
-      );
-    }
-
-    // 外部URLにリクエスト送信（適当なURL）
-    console.log('リクエスト送信開始...');
-    const webhookResponse = await sendToWebhook({
-      name,
-      email,
-      message,
-      timestamp: new Date().toISOString(),
-    });
-
-    console.log('Webhook結果:', webhookResponse);
-
-    return NextResponse.json({
-      message: 'お問い合わせを受け付けました。ありがとうございます！',
-      webhookStatus: webhookResponse.success
-    });
-
-  } catch (error) {
-    console.error('Contact form error:', error);
+  // バリデーション
+  if (!name || !email || !message) {
     return NextResponse.json(
-      { error: '送信中にエラーが発生しました。しばらく後に再度お試しください。' },
-      { status: 500 }
+      { error: '必須項目が入力されていません。' },
+      { status: 400 }
     );
   }
+
+  // メールアドレスの簡易バリデーション
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return NextResponse.json(
+      { error: '有効なメールアドレスを入力してください。' },
+      { status: 400 }
+    );
+  }
+
+  // 外部URLにリクエスト送信（適当なURL）
+  console.log('リクエスト送信開始...');
+  const webhookResponse = sendToWebhook({
+    name,
+    email,
+    message,
+    timestamp: new Date().toISOString(),
+  });
+
+  console.log('Webhook結果:', webhookResponse);
+
+  return NextResponse.json({
+    message: 'お問い合わせを受け付けました。ありがとうございます！'
+  });
+
 }
 
 async function sendToWebhook(data: ContactFormData & { timestamp: string }) {

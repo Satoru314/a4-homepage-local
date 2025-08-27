@@ -24,8 +24,8 @@ export default function ProductCard({
             rel="noopener noreferrer"
             className="w-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
         >
-            <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} h-full`}>
-                <div className="w-full lg:w-1/2">
+            <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} h-full`}>
+                <div className="w-full md:w-1/2">
                     <div className="relative aspect-video w-full overflow-hidden rounded-lg border-2 border-gray-200 group cursor-pointer">
                         <Image
                             src={productImage}
@@ -36,7 +36,7 @@ export default function ProductCard({
                     </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 p-6 lg:p-8">
+                <div className="w-full md:w-1/2 p-6 md:p-8">
                     <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 relative inline-block">
                         {productName}
                         <div className="absolute bottom-0 -left-2 -right-2 h-0.5 bg-[var(--primary-color)] rounded-full"></div>

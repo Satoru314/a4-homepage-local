@@ -10,14 +10,14 @@ export default function Home() {
       {/* ヒーローセクション */}
       <HeroSection />
 
+      {/* ニュースセクション */}
+      <NewsSection />
+
       {/* 団体紹介セクション */}
       <AboutSection />
 
       {/* 部署紹介セクション */}
       <DepartmentsSection />
-
-      {/* ニュースセクション */}
-      <NewsSection />
 
       {/* 活動情報セクション */}
       <ActivityInfoSection />

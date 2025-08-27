@@ -32,8 +32,8 @@ export default function HeroImage({ images, priority = false, intervalMs = 3000 
     }
 
     return (
-        <div className="w-full lg:w-2/3 relative h-screen sm:h-80
-         lg:h-screen order-1 lg:order-2 overflow-hidden">
+        <div className="w-full md:w-2/3 relative h-screen sm:h-80
+         md:h-screen order-1 md:order-2 overflow-hidden">
             {images.map((image, index) => (
                 <div
                     key={index}
@@ -51,11 +51,11 @@ export default function HeroImage({ images, priority = false, intervalMs = 3000 
             ))}
             {/* スマホ用オーバーレイテキスト */}
             <div className="sm:hidden absolute inset-0 flex items-center justify-center">
-              <div className="border-2 border-white p-6 flex flex-col items-center">
-                <h1 className="text-2xl font-bold text-white text-center mb-4" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', height: '200px' }}>
-                  神大生に最高の 学生生活を。
-                </h1>
-              </div>
+                <div className="border-2 border-white p-6 flex flex-col items-center">
+                    <h1 className="text-2xl font-bold text-white text-center mb-4" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', height: '200px' }}>
+                        神大生に最高の 学生生活を。
+                    </h1>
+                </div>
             </div>
         </div>
     );

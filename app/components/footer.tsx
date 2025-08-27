@@ -2,8 +2,8 @@ export default function Footer() {
     return (
         <footer className="border-t-4" style={{ borderColor: 'var(--primary-color)', backgroundColor: 'var(--secondary-color)' }}>
             <div className="max-w-6xl mx-auto px-10 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                    <div className="lg:col-span-1">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div className="md:col-span-1">
                         <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">
                             A4
                         </h3>
@@ -109,9 +109,6 @@ export default function Footer() {
                             © {new Date().getFullYear()} 学生団体A4. All rights reserved.
                         </p>
                         <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-                            <span className="text-gray-400 text-xs">
-                                Innovation meets student life
-                            </span>
                             <div className="flex items-center space-x-1">
                                 <span className="text-gray-400 text-xs">Developed by A4</span>
                             </div>

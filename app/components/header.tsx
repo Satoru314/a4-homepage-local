@@ -51,7 +51,7 @@ export default function Header() {
                     />
                     <h1
                         className={`text-xl font-bold
-                        ${isTransparent ? "text-white lg:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
+                        ${isTransparent ? "text-white md:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
                         `}
                     >
                         学生団体A4

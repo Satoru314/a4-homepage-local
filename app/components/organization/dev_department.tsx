@@ -4,12 +4,12 @@ import Image from 'next/image';
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiGithub, SiGo } from 'react-icons/si';
 
 const techStack = [
-    { name: 'Next.js', icon: <SiNextdotjs className="w-12 h-12" /> },
-    { name: 'TypeScript', icon: <SiTypescript className="w-12 h-12" /> },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-12 h-12" /> },
-    { name: 'Golang', icon: <SiGo className="w-12 h-12" /> },
-    { name: 'Vercel', icon: <SiVercel className="w-12 h-12" /> },
-    { name: 'GitHub', icon: <SiGithub className="w-12 h-12" /> },
+    { name: 'Next.js', icon: <SiNextdotjs className="w-10 h-10" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="w-10 h-10" /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-10 h-10" /> },
+    { name: 'Golang', icon: <SiGo className="w-10 h-10" /> },
+    { name: 'Vercel', icon: <SiVercel className="w-10 h-10" /> },
+    { name: 'GitHub', icon: <SiGithub className="w-10 h-10" /> },
 ];
 
 export default function DevDepartment() {
@@ -17,7 +17,7 @@ export default function DevDepartment() {
         <div>
             <div id="dev" className="absolute -translate-y-20"></div>
             <section className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div className="relative w-full h-48 md:h-56 lg:h-64">
+                <div className="relative w-full h-24 md:h-32">
                     <Image
                         src="/IMG_5471.jpg"
                         alt="開発部の活動風景"
@@ -29,19 +29,19 @@ export default function DevDepartment() {
                     </div>
                 </div>
 
-                <div className="p-6 md:p-8 lg:p-10">
+                <div className="p-6 md:p-10">
                     <div className="max-w-3xl mx-auto text-center">
                         <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                            神戸大学の学生生活をより便利に、より豊かにするためのアプリやウェブサービスを企画・設計・開発します。最新の技術トレンドを取り入れながら、ユーザーにとって本当に価値のあるサービスを開発することを目指しています。フロントエンド、バックエンド、モバイルアプリ開発など、幅広い技術領域でメンバーが協力し合い、学びながら成長できる環境を提供します。
+                            WEBアプリケーションを企画・設計・開発している部署です。チームで役割分担を行い、協力してアプリを作っています。<br />技術の教え合いや意見交換も活発に行っています。
                         </p>
                     </div>
 
-                    <div className="mt-10 md:mt-12">
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-8">使用技術</h3>
-                        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                    <div className="mt-4">
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">技術スタック</h3>
+                        <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4">
                             {techStack.map((tech) => (
                                 <div key={tech.name} className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-                                    <div className="text-gray-700">{tech.icon}</div>
+                                    <div className="text-gray-700 ">{tech.icon}</div>
                                     <p className="text-sm font-medium text-gray-600">{tech.name}</p>
                                 </div>
                             ))}
