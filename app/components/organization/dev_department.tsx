@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiGithub, SiGo } from 'react-icons/si';
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiGithub, SiGo } from 'react-icons/si';
 
 const techStack = [
     { name: 'Next.js', icon: <SiNextdotjs className="w-8 h-8" /> },
