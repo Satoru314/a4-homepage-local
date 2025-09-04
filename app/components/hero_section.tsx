@@ -5,7 +5,6 @@ const heroImages = [
     { src: "/IMG_5474.jpg", alt: "A4の活動風景 1" },
     { src: "/IMG_5471.jpg", alt: "A4の活動風景 2" },
     { src: "/IMG_5472.jpg", alt: "A4の活動風景 3" },
-    { src: "/IMG_5473.png", alt: "A4の活動風景 4" },
     { src: "/IMG_5475.jpg", alt: "A4の活動風景 5" },
 ];
 

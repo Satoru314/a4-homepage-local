@@ -28,7 +28,7 @@ export default function MktDepartment() {
             <section className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
                 <div className="relative w-full h-32">
                     <Image
-                        src="/IMG_5473.jpg"
+                        src="/IMG_5473.png"
                         alt="マーケティング部の活動風景"
                         fill
                         className="object-cover"
