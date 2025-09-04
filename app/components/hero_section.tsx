@@ -28,20 +28,14 @@ export default function HeroSection() {
                 intervalMs={4000}
             />
 
-            {/* スマホ用オーバーレイテキスト */}
+            {/* スマホ用オーバーレイテキスト
             <div className="md:hidden absolute inset-0 flex items-center justify-center">
                 <div className="border-2 border-white p-6 flex flex-col items-center">
-                    <h1 className="text-2xl font-bold text-white mb-4" style={{ 
-                        writingMode: 'vertical-rl', 
-                        textOrientation: 'mixed', 
-                        height: '200px',
-                        whiteSpace: 'nowrap',
-                        lineHeight: '1.2'
-                    }}>
-                        神大生に最高の学生生活を。
+                    <h1 className="text-2xl font-bold text-white h-48" >
+                        神大生に最高の学生生活
                     </h1>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
