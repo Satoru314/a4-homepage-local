@@ -7,19 +7,29 @@ import Image from "next/image";
 export default function Header() {
     const [isTop, setIsTop] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
+        // コンポーネントがマウントされたことを記録
+        setMounted(true);
+
+        // 初期スクロール位置をチェック
+        setIsTop(window.scrollY === 0);
+
         const handleScroll = () => {
             setIsTop(window.scrollY === 0);
         };
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     const isHomePage = pathname === "/home";
-    const isTransparent = isHomePage && isTop && !isMenuOpen;
+    const isTransparent = mounted && isHomePage && isTop && !isMenuOpen;
 
 
     return (
@@ -41,7 +51,7 @@ export default function Header() {
                     />
                     <h1
                         className={`text-xl font-bold
-                        ${isTransparent ? "text-white lg:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
+                        ${isTransparent ? "text-white md:text-[var(--secondary-color)]" : "text-[var(--secondary-color)]"}
                         `}
                     >
                         学生団体A4
@@ -53,18 +63,24 @@ export default function Header() {
                 style={{ color: isTransparent ? "#ffffff" : "var(--secondary-color)" }}
             >
                 <ul className="flex space-x-4">
-                    <li><a href="/home" >ホーム</a></li>
+                    <li>
+                        <a href="/home" className="block py-2">ホーム</a>
+                    </li>
+                    <li>
+                        <a href="/organization" className="block py-2">部署紹介</a>
+                    </li>
                     <li>
                         <a
                             href="/product"
-                            className="px-3 py-2 rounded-md "
+                            className="px-3 py-2 rounded-md block"
                             style={{ backgroundColor: "color-mix(in srgb, var(--primary-color) 50%, transparent)" }}
                         >
-                            アプリを使う
+                            アプリ一覧
                         </a>
                     </li>
-                    <li><a href="/organization" >部署紹介</a></li>
-                    <li><a href="/contact" >お問い合わせ</a></li>
+                    <li>
+                        <a href="/contact" className="block py-2">お問い合わせ</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -110,20 +126,20 @@ export default function Header() {
                                 </li>
                                 <li>
                                     <a
-                                        href="/product"
-                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        アプリを使う
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
                                         href="/organization"
                                         className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         部署紹介
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/product"
+                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        アプリ一覧
                                     </a>
                                 </li>
                                 <li>
