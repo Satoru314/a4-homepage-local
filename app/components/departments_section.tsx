@@ -22,7 +22,7 @@ const departments = [
         id: 'mkt',
         name: "マーケティング部",
         description: "アプリの宣伝や広報活動を行う部署です。SNSやイベントを通じて、A4の活動を広めています。",
-        imageSrc: "/IMG_5473.jpg",
+        imageSrc: "/IMG_5473.png",
         imageAlt: "マーケティング部の活動風景",
         link: "/organization#mkt"
     },

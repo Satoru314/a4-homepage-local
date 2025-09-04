@@ -27,9 +27,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // 外部URLにリクエスト送信（適当なURL）
+  // 外部URLにリクエスト送信
   console.log('リクエスト送信開始...');
-  const webhookResponse = sendToWebhook({
+  const webhookResponse = await sendToWebhook({
     name,
     email,
     message,
@@ -37,6 +37,14 @@ export async function POST(request: NextRequest) {
   });
 
   console.log('Webhook結果:', webhookResponse);
+
+  // Webhook送信の結果をチェック
+  if (!webhookResponse.success) {
+    return NextResponse.json(
+      { error: 'お問い合わせの送信に失敗しました。しばらく後に再度お試しください。' },
+      { status: 500 }
+    );
+  }
 
   return NextResponse.json({
     message: 'お問い合わせを受け付けました。ありがとうございます！'

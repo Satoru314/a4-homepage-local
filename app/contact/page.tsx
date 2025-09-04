@@ -46,11 +46,14 @@ export default function Contact() {
             });
 
             const result = await response.json();
+            console.log('APIレスポンス:', { status: response.status, result });
 
             if (response.ok) {
+                console.log('送信成功:', result);
                 setSubmitStatus('success');
                 setFormData({ name: '', email: '', message: '' });
             } else {
+                console.error('送信失敗:', result);
                 setSubmitStatus('error');
                 setErrorMessage(result.error || '送信中にエラーが発生しました。');
             }
