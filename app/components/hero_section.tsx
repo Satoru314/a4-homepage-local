@@ -27,15 +27,6 @@ export default function HeroSection() {
                 priority
                 intervalMs={4000}
             />
-
-            {/* スマホ用オーバーレイテキスト */}
-            <div className="md:hidden absolute inset-0 flex items-center justify-center">
-                <div className="border-2 border-white p-6 flex flex-col items-center">
-                    <h1 className="text-2xl font-bold text-white mb-4" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', height: '200px' }}>
-                        神大生に最高の 学生生活を。
-                    </h1>
-                </div>
-            </div>
         </div>
     );
 }
