@@ -5,17 +5,17 @@ import Image from 'next/image';
 const pastWorks = [
     {
         title: '六甲祭ビラ 2024',
-        imageSrc: '/スクリーンショット 2025-06-16 093027.png',
+        imageSrc: '/六甲祭ビラ印刷用.png',
         imageAlt: '六甲祭ビラ 2024のデザイン'
     },
     {
         title: '新歓ビラ 2025',
-        imageSrc: '/スクリーンショット 2025-06-16 093245.png',
+        imageSrc: '/A4新歓25ビラ.png',
         imageAlt: '新歓ビラ 2025のデザイン'
     },
     {
         title: 'SNS投稿コンテンツ',
-        imageSrc: '/スクリーンショット 2025-06-16 093320.png',
+        imageSrc: '/IMG_2308.jpg',
         imageAlt: 'SNS投稿コンテンツのデザイン'
     },
 ];
@@ -52,7 +52,7 @@ export default function MktDepartment() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                             {pastWorks.map((work) => (
                                 <div key={work.title} className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                                    <div className="relative w-full h-48">
+                                    <div className="relative w-full h-100">
                                         <Image
                                             src={work.imageSrc}
                                             alt={work.imageAlt}
