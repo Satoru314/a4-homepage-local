@@ -15,16 +15,24 @@ export default function Header() {
         setMounted(true);
 
         // 初期スクロール位置をチェック
-        setIsTop(window.scrollY === 0);
+        if (typeof window !== 'undefined') {
+            setIsTop(window.scrollY === 0);
+        }
 
         const handleScroll = () => {
-            setIsTop(window.scrollY === 0);
+            if (typeof window !== 'undefined') {
+                setIsTop(window.scrollY === 0);
+            }
         };
 
-        window.addEventListener("scroll", handleScroll);
+        if (typeof window !== 'undefined') {
+            window.addEventListener("scroll", handleScroll);
+        }
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            if (typeof window !== 'undefined') {
+                window.removeEventListener("scroll", handleScroll);
+            }
         };
     }, []);
 
