@@ -15,16 +15,24 @@ export default function Header() {
         setMounted(true);
 
         // 初期スクロール位置をチェック
-        setIsTop(window.scrollY === 0);
+        if (typeof window !== 'undefined') {
+            setIsTop(window.scrollY === 0);
+        }
 
         const handleScroll = () => {
-            setIsTop(window.scrollY === 0);
+            if (typeof window !== 'undefined') {
+                setIsTop(window.scrollY === 0);
+            }
         };
 
-        window.addEventListener("scroll", handleScroll);
+        if (typeof window !== 'undefined') {
+            window.addEventListener("scroll", handleScroll);
+        }
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            if (typeof window !== 'undefined') {
+                window.removeEventListener("scroll", handleScroll);
+            }
         };
     }, []);
 
@@ -64,22 +72,36 @@ export default function Header() {
             >
                 <ul className="flex space-x-4">
                     <li>
-                        <a href="/home" className="block py-2">ホーム</a>
+                        <a
+                            href="/home"
+                            className={`block py-2 ${pathname === "/home" ? "border-b-2 border-current" : ""}`}
+                        >
+                            ホーム
+                        </a>
                     </li>
                     <li>
-                        <a href="/organization" className="block py-2">部署紹介</a>
+                        <a
+                            href="/organization"
+                            className={`block py-2 ${pathname === "/organization" ? "border-b-2 border-current" : ""}`}
+                        >
+                            部署紹介
+                        </a>
                     </li>
                     <li>
                         <a
                             href="/product"
-                            className="px-3 py-2 rounded-md block"
-                            style={{ backgroundColor: "color-mix(in srgb, var(--primary-color) 50%, transparent)" }}
+                            className={`block py-2 ${pathname === "/product" ? "border-b-2 border-current" : ""}`}
                         >
                             アプリ一覧
                         </a>
                     </li>
                     <li>
-                        <a href="/contact" className="block py-2">お問い合わせ</a>
+                        <a
+                            href="/contact"
+                            className={`block py-2 ${pathname === "/contact" ? "border-b-2 border-current" : ""}`}
+                        >
+                            お問い合わせ
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -118,7 +140,11 @@ export default function Header() {
                                 <li>
                                     <a
                                         href="/home"
-                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg"
+                                        className={`block px-6 py-4 text-lg  ${
+                                            pathname === "/home"
+                                                ? "bg-gray-200 font-medium"
+                                                : "text-gray-700 "
+                                        }`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         ホーム
@@ -127,7 +153,11 @@ export default function Header() {
                                 <li>
                                     <a
                                         href="/organization"
-                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        className={`block px-6 py-4 text-lg border-t border-gray-200  ${
+                                            pathname === "/organization"
+                                                ? "bg-gray-200 font-medium"
+                                                : "text-gray-700 "
+                                        }`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         部署紹介
@@ -136,7 +166,11 @@ export default function Header() {
                                 <li>
                                     <a
                                         href="/product"
-                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        className={`block px-6 py-4 text-lg border-t border-gray-200  ${
+                                            pathname === "/product"
+                                                ? "bg-gray-200 font-medium"
+                                                : "text-gray-700 "
+                                        }`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         アプリ一覧
@@ -145,7 +179,11 @@ export default function Header() {
                                 <li>
                                     <a
                                         href="/contact"
-                                        className="block px-6 py-4 text-gray-700 hover:bg-gray-100 transition-colors text-lg border-t border-gray-200"
+                                        className={`block px-6 py-4 text-lg border-t border-gray-200  ${
+                                            pathname === "/contact"
+                                                ? "bg-gray-200 font-medium"
+                                                : "text-gray-700 "
+                                        }`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         お問い合わせ
